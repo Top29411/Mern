@@ -1,16 +1,15 @@
-const compression = require('compression');
-const cors = require('cors');
-const emoji = require('node-emoji');
-const express = require('express');
-const favicon = require('serve-favicon');
-const helmet = require('helmet');
-const cookieParser = require('cookie-parser');
-const morgan = require('morgan');
-const rateLimit = require('express-rate-limit');
-const responseTime = require('response-time');
-
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+import compression from 'compression';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import express from 'express';
+import rateLimit from 'express-rate-limit';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import emoji from 'node-emoji';
+import responseTime from 'response-time';
+import favicon from 'serve-favicon';
+import indexRouter from './routes/index';
+import usersRouter from './routes/users';
 
 const app = express();
 
