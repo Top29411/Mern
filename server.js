@@ -10,7 +10,6 @@ import emoji from 'node-emoji';
 import responseTime from 'response-time';
 import favicon from 'serve-favicon';
 import indexRouter from './routes/index';
-import usersRouter from './routes/users';
 
 const app = express();
 
@@ -55,7 +54,6 @@ app.use(
 
 // routes
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // setup ip address and port number
 app.set('port', process.env.PORT || 3000);
