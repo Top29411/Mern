@@ -14,7 +14,7 @@ const Inventory = props => {
 
   return (
     <div className='inventory'>
-      <h2>Inventory</h2>
+      <h1>Inventory</h1>
       {Object.keys(fishes).map(key => (
         <EditFishForm
           fish={fishes[key]}

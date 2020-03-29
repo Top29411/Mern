@@ -62,7 +62,7 @@ const SignUp = () => {
         }}>
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
           <Container component='main' maxWidth='sm'>
-            <div className='signup-title'>Registration form</div>
+            <h1>Signup</h1>
             <div style={{ marginTop: 10 }}>
               <form onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
