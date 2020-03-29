@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className='menu'>
       <h1>Fishes</h1>
-      <ul className='fishes'>
+      <ul>
         {Object.keys(fishes).map(key => (
           <Fish key={key} index={key} details={fishes[key]} />
         ))}
