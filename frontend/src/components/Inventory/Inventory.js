@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import sampleFishes from '../sample-fishes';
-import AddFishForm from './AddFishForm';
-import EditFishForm from './EditFishForm';
+import sampleFishes from '../../sample-fishes';
+import AddFishForm from '../AddFishForm/AddFishForm';
+import EditFishForm from '../EditFishForm/EditFishForm';
+import './Inventory.scss';
 
 const Inventory = props => {
   const [fishes, setFishes] = useState({});

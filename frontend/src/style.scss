@@ -1,28 +1,3 @@
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section,
-summary {
-  display: block;
-}
-audio,
-canvas,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-[hidden] {
-  display: none;
-}
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -37,34 +12,6 @@ a:hover {
 }
 h1 {
   font-size: 2em;
-}
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-b,
-strong {
-  font-weight: 700;
-}
-dfn {
-  font-style: italic;
-}
-mark {
-  background: #ff0;
-  color: #000;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-q {
-  quotes: 2 1c 2 1d 2 18 2 19;
 }
 small {
   font-size: 80%;
@@ -162,11 +109,11 @@ html {
   font-size: 62.5%;
 }
 body {
-  background: #d4d4d4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 2rem;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen';
+  background: #d4d4d4;
+  margin: 10px;
 }
 h1 {
   font-family: 'blanchcaps_inline', sans-serif;
@@ -174,32 +121,13 @@ h1 {
   font-weight: normal;
   margin: 0;
 }
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h2 {
   font-weight: normal;
   font-family: 'haymakerregular', sans-serif;
-}
-h2 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 2rem;
-}
-h3 {
-  font-size: 3rem;
-}
-
-.inventory {
-  width: 855px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.menu {
-  width: 855px;
-  margin: 0 auto;
 }
 
 ul {
@@ -207,6 +135,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 ul.order li {
   border-bottom: 1px solid #000;
   padding: 2rem 0;
@@ -218,9 +147,11 @@ ul.order li {
   -webkit-box-align: center;
   align-items: center;
 }
+
 ul.order li:hover button {
   display: inline;
 }
+
 ul.order li button {
   border: 0;
   display: none;
@@ -302,38 +233,7 @@ ul.order li span.count span {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-.menu-fish {
-  border-bottom: 2px solid #000;
-  border-top: 1px solid #000;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-  margin-bottom: 5px;
-  clear: both;
-  overflow: hidden;
-}
-.menu-fish p {
-  margin: 0;
-  font-size: 1.8rem;
-}
-.menu-fish .fish-name {
-  margin: 0;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-}
-.menu-fish .price {
-  font-size: 1.4rem;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
-}
-.menu-fish img {
-  float: left;
-  width: 150px;
-  margin-right: 1rem;
-}
+
 button,
 input[type='submit'] {
   text-transform: uppercase;

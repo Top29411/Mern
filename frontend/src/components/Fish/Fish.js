@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import './Fish.scss';
 
 const Fish = props => {
   const { image, name, price, desc, status } = props.details;
