@@ -1,0 +1,29 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-alert": ["error"],
+    "no-console": ["error"],
+    "no-debugger": ["error"],
+    "no-trailing-spaces": ["error"]
+  }
+}
