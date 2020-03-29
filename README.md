@@ -18,7 +18,9 @@ To install all the packages, please run (at the root folder):
 ## Backend (Node.js | Express | MongoDB)
 
 - yarn start
+- open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Frontend (React | Formik | Material-UI)
 
 - yarn start
+- open [http://localhost:8000](http://localhost:8000) to view it in the browser. You can change the **port** in the /frontend/.env file
