@@ -1,12 +1,8 @@
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import Container from '@material-ui/core/Container';
-import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Grid from '@material-ui/core/Grid';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import SendIcon from '@material-ui/icons/Send';
@@ -47,8 +43,6 @@ const SignUp = () => {
           email: '',
           password: '',
           passwordConfirmation: '',
-          status: '',
-          newsletter: true,
           acceptTerms: false
         }}
         validationSchema={validationRules}
@@ -68,7 +62,7 @@ const SignUp = () => {
         }}>
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
           <Container component='main' maxWidth='sm'>
-            <div className='register-title'>Registration form</div>
+            <div className='signup-title'>Registration form</div>
             <div style={{ marginTop: 10 }}>
               <form onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
@@ -140,36 +134,6 @@ const SignUp = () => {
                     {touched.password && touched.passwordConfirmation && errors.passwordConfirmation ? (
                       <div className='error'>{errors.passwordConfirmation}</div>
                     ) : null}
-                  </Grid>
-                  <Grid item xs={12}>
-                    <FormControl variant='outlined' fullWidth>
-                      <InputLabel>Status</InputLabel>
-                      <Select
-                        variant='outlined'
-                        id='status'
-                        name='status'
-                        label='Status'
-                        value={values.status}
-                        onChange={handleChange}>
-                        <MenuItem value={'teacher'}>Teacher</MenuItem>
-                        <MenuItem value={'teacherAssistant'}>Teacher assistant</MenuItem>
-                        <MenuItem value={'student'}>Student</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          id='newsletter'
-                          name='newsletter'
-                          value='newsletter'
-                          checked={values.newsletter}
-                          onChange={handleChange('newsletter')}
-                        />
-                      }
-                      label='Subscribe to newsletter'
-                    />
                   </Grid>
                   <Grid item xs={12}>
                     <FormControlLabel
