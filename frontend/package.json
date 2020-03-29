@@ -13,6 +13,7 @@
     "@material-ui/icons": "^4.9.1",
     "autoprefixer-stylus": "^1.0.0",
     "formik": "^2.1.4",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
