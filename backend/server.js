@@ -69,9 +69,5 @@ app.set('ipaddr', '0.0.0.0');
 
 // start express server
 app.listen(app.get('port'), app.get('ipaddr'), function () {
-  console.log(
-    emoji.get('heart'),
-    'The server is running @ ' + 'http://localhost/' + app.get('port'),
-    emoji.get('heart')
-  );
+  console.log(emoji.get('heart'), 'The server is running @ ' + 'http://localhost/' + app.get('port'), emoji.get('heart'));
 });
