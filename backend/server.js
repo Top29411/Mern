@@ -1,7 +1,9 @@
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import express from 'express';
+import mongoSanitize from 'express-mongo-sanitize';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import hpp from 'hpp';
@@ -51,6 +53,12 @@ app.use(
     message: 'Too many requests from this IP, please try again in 15 minutes'
   })
 );
+
+// loads environment variables from a config.env file into process.env
+dotenv.config({ path: 'config.env' });
+
+// prevent MongoDB operator injection by sanitizing user data.
+app.use(mongoSanitize());
 
 // routes
 app.use('/', indexRouter);
