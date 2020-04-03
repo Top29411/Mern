@@ -28,7 +28,7 @@ To install all the packages, please run (at the root folder):
 - open [http://localhost:8000](http://localhost:8000) to view it in the browser. You can change the **port** in the /frontend/.env file
 
 
-:warning: Important :warning:
+:warning: 	__**Important**__ :warning:
 
 This repo uses some VSCode extensions. It's highly recommended to install them.
 
