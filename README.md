@@ -8,7 +8,7 @@ To do this run this commandes at the root directory
 - docker-compose up --build -d mongodb
 - docker-compose up
 
-To access MongoDB console shell, you can use **`> docker exec it mongodb bash`**
+To access MongoDB console shell, you can use **`> docker exec -it mongodb bash`**
 
 This repo uses yarn workspaces
 https://classic.yarnpkg.com/en/docs/workspaces/
