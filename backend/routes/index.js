@@ -13,11 +13,8 @@ indexRouter.get('/', function (req, res) {
     os: process.env.OS,
     architecture: process.env.PROCESSOR_ARCHITECTURE,
     nb_processors: process.env.NUMBER_OF_PROCESSORS,
-    coputerName: process.env.COMPUTERNAME,
-    username: process.env.username,
-    lang: process.env.LANG,
-    homePath: process.env.HOMEPATH,
-    node: process.env.NODE
+    computerName: process.env.COMPUTERNAME,
+    username: process.env.username
   });
 });
 

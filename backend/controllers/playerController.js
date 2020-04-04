@@ -2,12 +2,18 @@ import Player from '../models/playerModel';
 
 // add a player document
 export const add = (req, res) => {
-  new Player(req.body).save((error, createdPlayer) => {
+  var player = new Player(req.body);
+
+  // since we are authenticated
+  player.createdBy = req.userId;
+  player.updatedBy = req.userId;
+
+  player.save((error, createdPlayer) => {
     if (error) {
-      res.json(error);
+      return res.status(400).json(error);
     }
 
-    res.send(createdPlayer);
+    return res.send(createdPlayer);
   });
 };
 
@@ -15,10 +21,10 @@ export const add = (req, res) => {
 export const getAll = (req, res) => {
   Player.find({}, (error, players) => {
     if (error) {
-      res.json(error);
+      return res.status(400).json(error);
     }
 
-    res.send(players);
+    return res.send(players);
   });
 };
 
@@ -26,31 +32,43 @@ export const getAll = (req, res) => {
 export const getById = (req, res) => {
   Player.findById(req.params.id, (error, player) => {
     if (error) {
-      res.json(error);
+      return res.status(400).json(error);
     }
 
-    res.send(player);
+    return res.send(player);
   });
 };
 
 // update a player
 export const update = (req, res) => {
-  Player.findOneAndUpdate({ _id: req.params.id }, req.body, (error, player) => {
+  var player = req.body;
+
+  // since we are authenticated
+  player.updatedBy = req.userId;
+
+  // we use { new: true } to return the updated document instead of the original
+  Player.findOneAndUpdate({ _id: req.params.id }, player, { new: true }, (error, updatedPlayer) => {
     if (error) {
-      res.json(error);
+      return res.status(400).json(error);
     }
 
-    res.send(player);
+    return res.send(updatedPlayer);
   });
 };
 
 // delete a player
 export const remove = (req, res) => {
-  Player.remove({ _id: req.params.id }, (error, player) => {
+  Player.deleteOne({ _id: req.params.id }, (error, result) => {
     if (error) {
-      res.json(error);
+      return res.status(400).json(error);
     }
 
-    res.send('The player has been deleted');
+    if (!result.deletedCount) {
+      return res.status(400).json({ message: 'No player was found', deletedCount: result.deletedCount });
+    }
+
+    if (result.deletedCount && result.deletedCount > 0) {
+      return res.json({ message: 'The player has been deleted', deletedCount: result.deletedCount });
+    }
   });
 };
