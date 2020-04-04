@@ -7,11 +7,14 @@ import mongoSanitize from 'express-mongo-sanitize';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import hpp from 'hpp';
+import mongoose from 'mongoose';
 import morgan from 'morgan';
 import emoji from 'node-emoji';
 import responseTime from 'response-time';
 import favicon from 'serve-favicon';
 import indexRouter from './routes/index';
+import playerRouter from './routes/player';
+import userRouter from './routes/user';
 
 const app = express();
 
@@ -60,8 +63,24 @@ dotenv.config({ path: 'config.env' });
 // prevent MongoDB operator injection by sanitizing user data.
 app.use(mongoSanitize());
 
+// mongodb connection
+mongoose
+  .connect(
+    `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.HOST}:${process.env.MONGO_PORT}/${process.env.DATABASE}`,
+    {
+      useCreateIndex: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
+  )
+  .then(() => {
+    console.log(emoji.get('heavy_check_mark'), 'MongoDB connection success');
+  });
+
 // routes
 app.use('/', indexRouter);
+app.use('/player', playerRouter);
+app.use('/user', userRouter);
 
 // setup ip address and port number
 app.set('port', process.env.PORT || 3000);
