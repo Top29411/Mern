@@ -21,7 +21,19 @@ const playerSchema = new Schema({
     type: Number,
     enum: [10, 15, 20, 25, 30]
   },
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   creationDate: {
+    type: Date,
+    default: Date.now
+  },
+  updatedBy: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  updateDate: {
     type: Date,
     default: Date.now
   }
